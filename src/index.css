@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 160 60% 90%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 160 40% 88%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 160 40% 88%;
+
+    --primary: 160 100% 45%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 200 80% 50%;
+    --secondary-foreground: 220 20% 6%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 160 80% 35%;
+    --accent-foreground: 160 100% 90%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 45 100% 55%;
+    --warning-foreground: 220 20% 6%;
+
+    --safe: 160 100% 45%;
+    --suspicious: 45 100% 55%;
+    --phishing: 0 72% 55%;
+
+    --border: 160 30% 18%;
+    --input: 220 15% 14%;
+    --ring: 160 100% 45%;
+
+    --radius: 0.75rem;
+
+    --glow-primary: 0 0 20px hsl(160 100% 45% / 0.3);
+    --glow-danger: 0 0 20px hsl(0 72% 55% / 0.3);
+    --glow-warning: 0 0 20px hsl(45 100% 55% / 0.3);
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 160 40% 88%;
+    --sidebar-primary: 160 100% 45%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 160 40% 88%;
+    --sidebar-border: 160 30% 18%;
+    --sidebar-ring: 160 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-display);
+  }
+
+  code, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  .glow-danger {
+    box-shadow: var(--glow-danger);
+  }
+  .glow-warning {
+    box-shadow: var(--glow-warning);
+  }
+  .text-glow {
+    text-shadow: 0 0 10px hsl(160 100% 45% / 0.5);
+  }
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(160 100% 45% / 0.03) 2px,
+      hsl(160 100% 45% / 0.03) 4px
+    );
+  }
+}
